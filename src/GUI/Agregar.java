@@ -179,8 +179,7 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_paciBActionPerformed
 
     private void agregarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBActionPerformed
-        MainGui maingui = new MainGui();
-        String nombrePaciente = paciB.getText();
+    String nombrePaciente = paciB.getText();
         String fecha = fechaB.getText();// Formato YYYY-MM-DD
         String hora = horaB.getText();    // Formato HH:mm
         String motivo = motivoB.getText();
@@ -195,18 +194,16 @@ public class Agregar extends javax.swing.JFrame {
         else 
         {
             Cita nuevaCita = new Cita(nombrePaciente,fecha,hora,motivo,prioridad,nombreDoctor);
-            maingui.citas.agregarFinal(nuevaCita);
-            maingui.citas.actualizarTabla(maingui.modelo);
+            mainGui.citas.agregarFinal(nuevaCita);
+            mainGui.citas.actualizarTabla(mainGui.modelo);
             
-            maingui.setVisible(true);
-            this.dispose();
+            this.setVisible(false);
         }
     }//GEN-LAST:event_agregarBActionPerformed
 
     private void volverBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverBActionPerformed
         MainGui ve = new MainGui();
         ve.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_volverBActionPerformed
 
     public static void main(String args[]) {
@@ -239,6 +236,7 @@ public class Agregar extends javax.swing.JFrame {
             public void run() {
                 MainGui main = new MainGui();
                 main.setVisible(true);
+                new Agregar(main).setVisible(true);//pasas los datos al main
             }
         });
     }

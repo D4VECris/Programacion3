@@ -103,11 +103,12 @@ public class Stock {
     }*/
     
    public void actualizarTabla(DefaultTableModel modelo){
+       modelo.setRowCount(0); //recuerda limpiar la tabla anterior antes de actualizar
         Nodo actual = this.head;
 
         while(actual != null){
             Cita cita = actual.cita;
-             
+            
             modelo.addRow(new Object[]{
                 cita.getNombrePaciente(),
                 cita.getFecha(),

@@ -1,7 +1,5 @@
 package GUI;
 
-import Clases.*;
-import javax.swing.JOptionPane;
 import Clases.Stock;
 import javax.swing.table.DefaultTableModel;
 
@@ -112,7 +110,6 @@ public class MainGui extends javax.swing.JFrame {
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         Agregar ve = new Agregar(this);
         ve.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_AgregarActionPerformed
 
     /**
